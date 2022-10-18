@@ -73,7 +73,7 @@ public class SafeInput
      * returns a user supplied int of arbitary value
      *
      * @param pipe the scanner to use  for the input
-     * @param promt the string promt tellling the user what to input
+     * @param prompt the string promt tellling the user what to input
      * @return an arbitary double of any value
      */
     public static double getDouble(Scanner pipe, String prompt)
@@ -160,6 +160,33 @@ public class SafeInput
             }else // dont have a 0 length String
             {
                 System.out.println("you must enter at least 1 charactor.");
+            }
+
+        }while(!done);
+        return retVal;
+    }
+    /**
+     * gets a string that matches a regular expression pattern like ###-##-#### \d{3}-\d{2}-\d{4}
+     *
+     * @param pipe scanner to use for input
+     * @param prompt string prompt to tell the user what to input
+     * @return a string that matches the RegEx pattern
+     */
+    public static String getRegExString(Scanner pipe,String prompt,String pattern)
+    {
+        String retVal = "";
+        boolean done = false;
+        do{
+            // favorite number 1-10
+            System.out.println(prompt +": ");
+            retVal = pipe.nextLine();
+
+            if(retVal.matches(pattern))
+            {
+                done = true;
+            }else // you have a zero length string
+            {
+                System.out.println("What you entered does not match the pattern. ."+ pattern);
             }
 
         }while(!done);
