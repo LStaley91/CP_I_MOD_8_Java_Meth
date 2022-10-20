@@ -17,10 +17,29 @@ public class Main
         int favNum = SafeInput.getRangedInt(in, "Enter Your Favorite number",1,100);
        // System.out.println(" You said your favorite number is "+ getRangedInt(in,"Enter Your Favorite number",1,100) );
         */
+        //int favNum = SafeInput.getRangedInt(in,"Enter your fav num",1,10);
+
+        //int anyint = getInt(in,"Enter an int");
+
+        //double salary = getDouble(in,"Enter your Salary");
+        //System.out.println("You said your salary was: "+salary);
+
+        //double tax = getRangedDouble(in,"enter your tax",100,1000);
+        //System.out.println("You said your tax was: "+ tax);
+
+        //String msg = getnonZeroLengthString(in,"Enter any string other than zero length");
+        //System.out.println("Msg is "+ msg);
+
+        //String ssn = getRegExString(in,"Enter your SSN","\\d{3}-\\d{2}-\\d{4}")
+        //System.out.println("Your snn: "+ ssn);
+
+        //boolean isRaining = getYNConfirm(in,"IS it raining");
+        //    System.out.println("You said it was"+ isRaining);
+
     }
 
     // user define static methods go here - after the main
-    public static void SayHello()
+   /* public static void SayHello()
     {
         System.out.println("Hello!");
     }
@@ -45,7 +64,7 @@ public class Main
         retVal = num * 2;
 
         return  retVal;
-    }
+    }*/
     /**
      *  Return a user supplied int within the specified range
      * @param pipe the scanner instance to use for the console input
@@ -231,6 +250,32 @@ public class Main
             }else // you have a zero length string
             {
                 System.out.println("What you entered does not match the pattern. ."+ pattern);
+            }
+
+        }while(!done);
+        return retVal;
+    }
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        boolean retVal = false;
+        boolean trash = false;
+        boolean done = false;
+        String inputYN = "";
+        do{
+            System.out.println(prompt +"[T/N]: ");
+            inputYN = pipe.nextLine();
+            if(inputYN.equalsIgnoreCase("Y"))
+            {
+                done = true;
+                retVal = true;
+            }else if(inputYN.equalsIgnoreCase("N"))
+            {
+                done = true;
+                retVal = false;
+            }
+            else
+            {
+                System.out.println("you must enter a Y or N.");
             }
 
         }while(!done);

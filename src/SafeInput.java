@@ -192,4 +192,38 @@ public class SafeInput
         }while(!done);
         return retVal;
     }
+
+    /**
+     * Take a Y or an N and returns true or flase repectifily
+     *
+     * @param pipe Scannner of use for console input
+     * @param prompt String indicates what to input
+     * @return A boolean true or false
+     */
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        boolean retVal = false;
+        boolean trash = false;
+        boolean done = false;
+        String inputYN = "";
+        do{
+            System.out.println(prompt +"[T/N]: ");
+            inputYN = pipe.nextLine();
+            if(inputYN.equalsIgnoreCase("Y"))
+            {
+                done = true;
+                retVal = true;
+            }else if(inputYN.equalsIgnoreCase("N"))
+            {
+                done = true;
+                retVal = false;
+            }
+            else
+            {
+                System.out.println("you must enter a Y or N.");
+            }
+
+        }while(!done);
+        return retVal;
+    }
 }
