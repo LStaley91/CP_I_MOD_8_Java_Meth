@@ -23,12 +23,12 @@ public class SafeInput
                 pipe.nextLine(); // c;ear the newline form buffer
                 if (retVal >= low && retVal <= high)
                 {
-                    System.out.println("\nYou said your ret val is " + retVal);
+                    System.out.println("\nYou said " + retVal);
                     done = true;
                 }
                 else
                 {
-                    System.out.println("\nYou said your ret val is " + retVal + "But that is out of the range["+ low + " " + high + "]");
+                    System.out.println("\nYou said " + retVal + "But that is out of the range["+ low + " " + high + "]");
                 }
             }
             else  // dont have an int
@@ -225,5 +225,31 @@ public class SafeInput
 
         }while(!done);
         return retVal;
+        }
+    public static void prettyHeader(String msg)
+    {
+        int length=msg.length();
+        int whiteSpace=(54 - msg.length())/2;
+
+        for (int x = 0; x < 60; x++){
+            System.out.print("*");
+            }
+            System.out.print("\n***");
+
+            for(int x = 0; x <= whiteSpace; x++){
+                System.out.print(" ");
+            }
+            System.out.print(msg);
+            for(int x = 0; x <= whiteSpace; x++){
+                System.out.print(" ");
+            }
+            System.out.print("***\n");
+
+            for (int x = 0; x < 60; x++){
+                System.out.print("*");
+            }
+            System.out.println("");
+
+
     }
 }

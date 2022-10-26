@@ -13,10 +13,10 @@ public class Main
         int doubledInt = doubleIT(favNum);
 
         System.out.println("Doubled is: " + doubledInt);
-
-        int favNum = SafeInput.getRangedInt(in, "Enter Your Favorite number",1,100);
-       // System.out.println(" You said your favorite number is "+ getRangedInt(in,"Enter Your Favorite number",1,100) );
         */
+        int favNum = SafeInput.getRangedInt(in, "Enter Your Favorite number",1,100);
+        System.out.println(" You said your favorite number is "+ getRangedInt(in,"Enter Your Favorite number",1,100) );
+
         //int favNum = SafeInput.getRangedInt(in,"Enter your fav num",1,10);
 
         //int anyint = getInt(in,"Enter an int");
